@@ -1,0 +1,27 @@
+
+[
+    {
+        "id": 1,
+        "name": "cookies",
+        "descripcion": "cookie pistacho",
+        "stock": 5,
+        "image": "/images/keylime.jpg",
+        "price": 540
+    },
+    {
+        "id": 2,
+        "name": "tortas",
+        "descripcion": "red velvet",
+        "stock": 4,
+        "image": "",
+        "price": 600
+    },
+    {
+        "id": 3,
+        "name": "macarrons",
+        "descripcion": "macarron ch blanco",
+        "stock": 7,
+        "image": "",
+        "price": 790
+    }
+]
