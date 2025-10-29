@@ -22,6 +22,8 @@
 .categorias {
     display: flex;
     list-style: none;
+    text-decoration: none;
+    color: aliceblue;
     gap: 30px; 
     margin: 0;
     padding: 0;

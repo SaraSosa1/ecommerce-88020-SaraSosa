@@ -1,27 +1,102 @@
 
 [
-    {
-        "id": 1,
-        "name": "cookies",
-        "descripcion": "cookie pistacho",
-        "stock": 5,
-        "image": "/images/keylime.jpg",
-        "price": 540
-    },
-    {
-        "id": 2,
-        "name": "tortas",
-        "descripcion": "red velvet",
-        "stock": 4,
-        "image": "",
-        "price": 600
-    },
-    {
-        "id": 3,
-        "name": "macarrons",
-        "descripcion": "macarron ch blanco",
-        "stock": 7,
-        "image": "",
-        "price": 790
-    }
+  {
+    "id": 1,
+    "name": "Macarons de Frambuesa",
+    "description": "Macarons con frambuesas reales en el relleno",
+    "stock": 12,
+    "image": "/images/macarronframbuesa.JPG",
+    "price": 450,
+    "category": "macarons"
+  },
+  {
+    "id": 2,
+    "name": "Macarons de Pistacho",
+    "description": "Macarons con pedazos de pistacho",
+    "stock": 10,
+    "image": "/images/macarronpistacho.JPG",
+    "price": 480,
+    "category": "macarons"
+  },
+  {
+    "id": 3,
+    "name": "Macarons de Chocolate",
+    "description": "Macarons rellenos de ganache de chocolate",
+    "stock": 15,
+    "image": "/images/macarronchocolate.JPG",
+    "price": 420,
+    "category": "macarons"
+  },
+  {
+    "id": 4,
+    "name": "Cookies de Lemon Pie",
+    "description": "Cookies con sabor a lemon pie",
+    "stock": 20,
+    "image": "/images/cookielemonpie.JPG",
+    "price": 280,
+    "category": "cookies"
+  },
+  {
+    "id": 5,
+    "name": "Cookies de Pistacho",
+    "description": "Cookies con trozos de pistacho",
+    "stock": 18,
+    "image": "/images/cookiepistacho.JPG",
+    "price": 300,
+    "category": "cookies"
+  },
+  {
+    "id": 6,
+    "name": "Cookies de Chips de Chocolate",
+    "description": "Cookies clásicas con chips de chocolate",
+    "stock": 25,
+    "image": "/images/cookiechips.JPG",
+    "price": 250,
+    "category": "cookies"
+  },
+  {
+    "id": 7,
+    "name": "Cookies Red Velvet",
+    "description": "Cookies estilo red velvet con frosting",
+    "stock": 16,
+    "image": "/images/cookieredvelvet.JPG",
+    "price": 320,
+    "category": "cookies"
+  },
+  {
+    "id": 8,
+    "name": "Torta Key Lime Pie",
+    "description": "Torta con sabor a key lime pie",
+    "stock": 5,
+    "image": "/images/keylime.jpg",
+    "price": 850,
+    "category": "tortas"
+  },
+  {
+    "id": 9,
+    "name": "Marquise de Frutillas",
+    "description": "Marquise de chocolate con frutillas",
+    "stock": 4,
+    "image": "/images/marquissefrutilla.jpg",
+    "price": 920,
+    "category": "tortas"
+  },
+  {
+    "id": 10,
+    "name": "Marquise de Golosinas",
+    "description": "Marquise decorada con golosinas",
+    "stock": 3,
+    "image": "/images/marquissegolo.PNG",
+    "price": 890,
+    "category": "tortas"
+  },
+  {
+    "id": 11,
+    "name": "Tarta de Frutillas",
+    "description": "Tarta de frutillas con crema pastelera",
+    "stock": 6,
+    "image": "/images/tartadefrutilla.PNG",
+    "price": 780,
+    "category": "tortas"
+  }
 ]

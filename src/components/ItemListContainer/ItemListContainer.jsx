@@ -1,28 +1,41 @@
 
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
-import { getProducts } from "../../data/fetchApi.js"
+import "./itemlistcontainer.css";
+import getProducts from "../../data/products.js";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
-   const[products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { category } = useParams();
 
-   useEffect(()=>{
+  useEffect(() => {
+    
+    setLoading(true);
 
     getProducts()
-    .then((data)=>{
-     console.log( "datos recibidos", data);
-      setProducts(data.payload)
-    })
+      .then((data)=> {
+        if(category){
+          const productsFilter = data.filter((product)=> product.category === category );
+          setProducts(productsFilter);
+        }else{
+          setProducts(data);
+        }
+      })
+      .finally(()=> {
+        
+        setLoading(false);
+      })
 
-   }, [])
-
-
-     console.log(products)
+  }, [category])
 
   return (
-    <div className="itemListcontainer">
-     <h2>{greeting}</h2>
-    <ItemList products= {products} />
+    <div className="itemlistcontainer">
+      <h2>{greeting}</h2>
+      {
+        loading ? <div>Cargando...</div> : <ItemList products={products} />
+      }
     </div>
   )
 }
