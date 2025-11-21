@@ -1,29 +1,38 @@
 import { useState, useEffect } from "react";
-import getProducts from "../../data/products.js";
 import ItemDetail from "../ItemDetail/ItemDetail.jsx";
+import Loading from "../Loading/Loading";
 import { useParams } from "react-router-dom";
+import { collection, doc, getDoc } from "firebase/firestore"; 
+import db from "../../db/db.js";
 
-const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({});
-    const {id} = useParams();
+const ItemDetailContainer = ({ greeting }) => {
+  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
-    useEffect(()=> {
+  const getProducts = async () => {
+    setLoading(true);
+    try {
+      const productRef = doc(db, "products", id);
+      const dataDb = await getDoc(productRef);
+      const data = { id: dataDb.id, ...dataDb.data() };
+      setProduct(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-        getProducts()
-        .then((data)=> {
-          const dataProduct = data.find((product)=> product.id === parseInt (id) );
-          setProduct(dataProduct);
-        })
+  useEffect(() => {
+    getProducts();
+  }, [id]);
 
-    }, []);
-
-    console.log(product)
-    
   return (
     <div>
-      <ItemDetail product={product} />
+      {loading ? <Loading /> : <ItemDetail product={product} />}
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

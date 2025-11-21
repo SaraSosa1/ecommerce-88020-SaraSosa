@@ -1,6 +1,27 @@
 
-.itemlist{
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
+.itemlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+
+@media (max-width: 768px) {
+  .itemlist {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .itemlist {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 10px;
+  }
 }
