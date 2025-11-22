@@ -1,77 +1,61 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
-  const [dataForm, setDataForm] = useState({ email: "", password: "" });
-  const navigate = useNavigate();
-  const auth = getAuth();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const handleChangeInput = (e) =>
-    setDataForm({ ...dataForm, [e.target.name]: e.target.value });
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
 
-  const handleSubmitForm = async (e) => {
-    e.preventDefault();
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        dataForm.email,
-        dataForm.password
-      );
-      if (!userCredential.user.emailVerified) {
-        auth.signOut();
-        throw new Error("El correo no fue verificado!");
-      }
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log("Login:", formData);
   };
 
   return (
-    <div className="login">
-      <form className="form-login" onSubmit={handleSubmitForm}>
-        <h2>Iniciar Sesión</h2>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <h2 className="auth-title">Iniciar Sesión</h2>
 
-        <div className="input-box">
+        <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
-            className="input"
-            placeholder="Ingrese su email"
             type="email"
             id="email"
             name="email"
-            value={dataForm.email}
-            onChange={handleChangeInput}
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="tu@email.com"
             required
           />
         </div>
 
-        <div className="input-box">
+        <div className="form-group">
           <label htmlFor="password">Contraseña</label>
           <input
-            className="input"
-            placeholder="Ingrese su contraseña"
             type="password"
             id="password"
             name="password"
-            value={dataForm.password}
-            onChange={handleChangeInput}
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="••••••••"
             required
           />
         </div>
 
-        <button className="submit" type="submit">
-          INICIAR SESIÓN
+        <button type="submit" className="auth-btn">
+          Ingresar
         </button>
 
-        <div className="button-to-register">
-          <p>¿Eres nuevo?</p>
-          <Link className="link" to="/register">
-            Regístrate aquí!
-          </Link>
-        </div>
+        <p className="auth-link-text">
+          ¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link>
+        </p>
       </form>
     </div>
   );
