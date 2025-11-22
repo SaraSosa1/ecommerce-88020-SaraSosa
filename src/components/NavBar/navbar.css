@@ -1,110 +1,107 @@
-
-
 .navbar {
-    width: 100%;
-    height: 150px;
-    background-color: rgb(247, 229, 247); 
-    background-image: url('../../assets/img/macarrons.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    color: brown;
-    display: flex;
-    justify-content: space-between;
+width: 100%;
+height: 150px;
+background-color: rgb(247, 229, 247);
+background-image: url('../../assets/img/macarrons.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+color: brown;
+display: flex;
+justify-content: space-between;
 }
-
 
 .navbar .logo{
-   width: 150px;
+width: 150px;
 }
 
-
 .categorias {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    color: aliceblue;
-    gap: 30px; 
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    font-size: 18px;
+display: flex;
+list-style: none;
+text-decoration: none;
+color: aliceblue;
+gap: 30px;
+margin: 0;
+padding: 0;
+font-weight: bold;
+font-size: 18px;
 }
 
 .categorias li {
-    cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    background-color: rgba(242, 121, 123, 0.9);
-    color: white;
-    
+cursor: pointer;
+padding: 8px 16px;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+background-color: rgba(242, 121, 123, 0.9);
+color: white;
+
 }
 
-
 .categorias li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+background-color: rgba(255, 255, 255, 0.2);
 }
 
 .cart-widget {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+display: flex;
+align-items: center;
+cursor: pointer;
 }
 
 .cart-icon {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    transition: transform 0.2s ease;
+width: 70px;
+height: 70px;
+object-fit: contain;
+transition: transform 0.2s ease;
 }
 
 .cart-icon:hover {
-    transform: scale(1.1);
+transform: scale(1.1);
 }
 
 .imagen-container {
-    width: 100%;
-    height: 100%; 
-    object-fit: cover; 
-    display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
 }
 
 .categorias {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
+display: flex;
+gap: 40px;
+list-style: none;
+margin: 0;
+padding: 0;
+align-items: center;
 }
 
 .categorias li a {
-  text-decoration: none;  
-  color: #2c2c2c;  
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-  position: relative;
+text-decoration: none;
+
+color: #2c2c2c;
+
+font-size: 0.95rem;
+font-weight: 400;
+letter-spacing: 1px;
+text-transform: uppercase;
+transition: color 0.3s ease;
+position: relative;
 }
 
 .categorias li a:hover {
-  color: #8b7355;
+color: #8b7355;
 }
 
 .categorias li a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #8b7355;
-  transition: width 0.3s ease;
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 1px;
+background-color: #8b7355;
+transition: width 0.3s ease;
 }
 
 .categorias li a:hover::after {
-  width: 100%;
+width: 100%;
 }
