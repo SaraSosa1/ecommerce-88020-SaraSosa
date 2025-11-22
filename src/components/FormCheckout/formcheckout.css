@@ -1,0 +1,113 @@
+
+.checkout-form {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  background: white;
+  border: 1px solid #e8e8e8;
+}
+
+
+.checkout-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #2c2c2c;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 40px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #2c2c2c;
+  border: 1px solid #e8e8e8;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2c2c2c;
+  background: white;
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+  font-weight: 300;
+}
+
+ .submit-order-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: #2c2c2c;
+  color: white;
+  border: 1px solid #2c2c2c;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-order-btn:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.submit-order-btn:active {
+  transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+  .checkout-form {
+    margin: 40px 20px;
+    padding: 30px 20px;
+  }
+
+  .checkout-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-form {
+    margin: 20px 10px;
+    padding: 25px 15px;
+  }
+
+  .checkout-title {
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+  }
+
+  .form-group input {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+}
