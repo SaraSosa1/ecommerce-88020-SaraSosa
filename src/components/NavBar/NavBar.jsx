@@ -16,30 +16,47 @@ const NavBar = () => {
         <img src={logo} className="logo" alt="logo" />
       </Link>
 
-
-      <div className={`hamburger ${menuOpen ? "open" : ""}`} onClick={toggleMenu} aria-label="menu button">
+      <div
+        className={`hamburger ${menuOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+        aria-label="menu button"
+      >
         <span></span>
         <span></span>
         <span></span>
       </div>
 
-      
       <ul className={`categorias ${menuOpen ? "active" : ""}`}>
         <li>
-          <Link to="/category/macarons" onClick={closeMenu}>Macarrons</Link>
+          <Link to="/category/macarons" onClick={closeMenu}>
+            Macarrons
+          </Link>
         </li>
         <li>
-          <Link to="/category/cookies" onClick={closeMenu}>Cookies</Link>
+          <Link to="/category/cookies" onClick={closeMenu}>
+            Cookies
+          </Link>
         </li>
         <li>
-          <Link to="/category/tortas" onClick={closeMenu}>Tortas</Link>
+          <Link to="/category/tortas" onClick={closeMenu}>
+            Tortas
+          </Link>
         </li>
 
         <li className="auth-link">
-          <Link to="/login" onClick={closeMenu}>Login</Link>
+          <Link to="/login" onClick={closeMenu}>
+            Login
+          </Link>
         </li>
         <li className="auth-link">
-          <Link to="/register" onClick={closeMenu}>Register</Link>
+          <Link to="/register" onClick={closeMenu}>
+            Register
+          </Link>
+        </li>
+        <li className="auth-link">
+          <Link to="/profile" onClick={closeMenu}>
+            Mi Perfil
+          </Link>
         </li>
       </ul>
 
