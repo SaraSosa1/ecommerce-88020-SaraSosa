@@ -7,35 +7,40 @@ import Cart from "./components/Cart/Cart.jsx";
 import Checkout from "./components/Checkout/Checkout.jsx";
 import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
+import Profile from "./components/Profile/Profile.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
 import "./App.css";
 
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <CartProvider>
-          <NavBar />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <ItemListContainer greeting={"Bienvenidos a mi pasteleria"} />
-              }
-            />
-            <Route
-              path="/category/:category"
-              element={
-                <ItemListContainer greeting={"Bienvenidos a mi pasteleria"} />
-              }
-            />
-            <Route path="/detail/:id" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="*" element={<div>Error 404</div>} />
-          </Routes>
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <NavBar />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <ItemListContainer greeting={"Bienvenidos a mi pasteleria"} />
+                }
+              />
+              <Route
+                path="/category/:category"
+                element={
+                  <ItemListContainer greeting={"Bienvenidos a mi pasteleria"} />
+                }
+              />
+              <Route path="/detail/:id" element={<ItemDetailContainer />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="*" element={<div>Error 404</div>} />
+            </Routes>
+          </CartProvider>
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );

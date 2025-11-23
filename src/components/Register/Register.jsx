@@ -5,19 +5,19 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { setDoc, doc, addDoc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import db from "../../db/db.js";
 import "../Login/Login.css";
 
 const Register = () => {
   const [dataForm, setDataForm] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
 
   const auth = getAuth();
-  const navegate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChangeInput = (event) => {
     setDataForm({ ...dataForm, [event.target.name]: event.target.value });
@@ -31,7 +31,7 @@ const Register = () => {
         dataForm.email,
         dataForm.password
       );
-      if (userCredential) throw new Error("Error al crear el usuario");
+      if (!userCredential) throw new Error("Error al crear el usuario");
 
       await setDoc(doc(db, "users", userCredential.user.uid), {
         username: dataForm.username,
@@ -50,17 +50,17 @@ const Register = () => {
   return (
     <div className="auth-container">
       <form className="auth-form" onSubmit={handleSubmitForm}>
-        <h2 className="auth-title">Crear Cuenta</h2>
+        <h2 className="auth-title">Registro</h2>
 
         <div className="form-group">
-          <label htmlFor="name">Nombre completo</label>
+          <label htmlFor="username">Nombre de usuario</label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={dataForm.name}
+            id="username"
+            name="username"
+            value={dataForm.username}
             onChange={handleChangeInput}
-            placeholder="Tu nombre"
+            placeholder="Nombre de usuario"
             required
           />
         </div>
@@ -92,7 +92,7 @@ const Register = () => {
         </div>
 
         <button type="submit" className="auth-btn">
-          Registrarse
+          Registrarme
         </button>
 
         <p className="auth-link-text">
